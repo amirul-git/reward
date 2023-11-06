@@ -18,6 +18,13 @@ class UserSeeder extends Seeder
     {
         $permissions = collect(
             [
+                'view users',
+                'show users',
+                'create users',
+                'store users',
+                'edit users',
+                'update users',
+                'delete users',
                 'view rewards',
                 'show rewards',
                 'create rewards',
@@ -59,7 +66,7 @@ class UserSeeder extends Seeder
         });
 
         $user = \App\Models\User::factory()->create([
-            'name' => 'Admin',
+            'name' => 'Andik',
             'email' => 'andik@mail.com',
         ]);
         $user->assignRole('admin');
@@ -117,7 +124,7 @@ class UserSeeder extends Seeder
             ]
         );
 
-        $buyerRole = Role::create(['name' => 'buyer']);
+        $buyerRole = Role::create(['name' => 'customer']);
 
         $permissions->each(function ($permission) use ($buyerRole) {
             $buyerRole->givePermissionTo($permission);
@@ -127,12 +134,12 @@ class UserSeeder extends Seeder
             'name' => 'fia',
             'email' => 'fia@mail.com',
         ]);
-        $user->assignRole('buyer');
+        $user->assignRole('customer');
 
         $user = \App\Models\User::factory()->create([
             'name' => 'krisma',
             'email' => 'krisma@mail.com',
         ]);
-        $user->assignRole('buyer');
+        $user->assignRole('customer');
     }
 }
