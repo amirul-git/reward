@@ -10,4 +10,7 @@ class RewardStatus extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+
+    public const CREATED = 1;
+    public const EXCHANGED = 2;
 }

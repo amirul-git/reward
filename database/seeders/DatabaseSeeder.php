@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
                 ReceiptStatusSeeder::class,
                 PointSeeder::class,
                 PointStatusSeeder::class,
+                RewardStatusSeeder::class
             ]
         );
     }

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->foreignId('product_id')->constrained();
             $table->foreignId('reward_status_id')->constrained();
             $table->string('key');
-            $table->string('qr');
             $table->timestamps();
         });
     }

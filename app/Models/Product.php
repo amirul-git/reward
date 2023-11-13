@@ -9,10 +9,15 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'amount', 'photo', 'user_id'];
+    protected $fillable = ['name', 'description', 'amount', 'point', 'photo', 'user_id'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function productExchangeLogs()
+    {
+        return $this->hasMany(ProductExchangeLog::class);
     }
 }

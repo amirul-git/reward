@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
+use App\Filament\Resources\ProductResource\RelationManagers\ProductExchangeLogsRelationManager;
 use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
@@ -33,6 +34,7 @@ class ProductResource extends Resource
                 TextInput::make('name')->required(),
                 TextInput::make('description')->required(),
                 TextInput::make('amount')->numeric()->required(),
+                TextInput::make('point')->numeric()->required()
             ]);
     }
 
@@ -63,7 +65,7 @@ class ProductResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            ProductExchangeLogsRelationManager::class
         ];
     }
 
