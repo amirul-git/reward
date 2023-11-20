@@ -20,4 +20,9 @@ class Product extends Model
     {
         return $this->hasMany(ProductExchangeLog::class);
     }
+
+    public function rewards()
+    {
+        return $this->hasMany(Reward::class);
+    }
 }
